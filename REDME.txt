@@ -1,0 +1,1 @@
+simple wordpress administrator are email send of user
