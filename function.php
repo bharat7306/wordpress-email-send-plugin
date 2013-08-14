@@ -114,9 +114,13 @@ function setting()
 		$fieldname=$_GET['fieldname'];
 		$tablename=$_GET['tablename'];
 		$wherefieldname=$_GET['wherefieldname'];
+		
+		global $wpdb;
+		$table_namedb = $wpdb->prefix . "bharat_plug_inquery"; 
+		
 		if($fieldname!="" && $tablename!="")
 		{
-			$query="UPDATE ".$_SESSION['tablenameset']." SET  `fieldname`= '".$fieldname."', `tablename`= '".$tablename."' ,`wherefield`= '".$wherefieldname."' where id=1";
+			$query="UPDATE ".$table_namedb." SET  `fieldname`= '".$fieldname."', `tablename`= '".$tablename."' ,`wherefield`= '".$wherefieldname."' where id=1";
 		}
 		else
 		{
@@ -130,6 +134,7 @@ function setting()
 		{
 			echo '<h4>Your Query Field Not Set Proparly Please Propar Entry Add !.....</h4>';
 		}
+		echo $query;
 		
 	}
 	//echo "<h3>Select your email id field values only query to set in use<br/>Ex....<br/>select emaiid from tablename <br/>Ex...<br/>select emaiid_field from tablename where fieidname = values .<br/></h3>";
@@ -154,6 +159,8 @@ function setting()
 function bharat_email_list()
 {
 	global $wpdb;
+	$_SESSION['tablenameset'] = $wpdb->prefix . "bharat_plug_inquery"; 
+		
 	$query_rec_fetch = $wpdb->get_results("select * from ".$_SESSION['tablenameset']." where id=1");
 	$query_make=" SELECT  ".$query_rec_fetch[0]->fieldname." FROM  ".$query_rec_fetch[0]->tablename."";
 	$_SESSION['field_value']=$query_rec_fetch[0]->fieldname;
