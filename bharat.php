@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Email Send Plugin
-Plugin URI: http://bharat1990.wordpress.com
+Plugin URI: http://bharat1990.wordpress.com/category/wordpress-plugin/
 Description: A simple plugin of the Wordpress.
 Version: 1.0
 Author: JivaniBhai
