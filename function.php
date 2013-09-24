@@ -235,7 +235,7 @@ function bharat_email_list()
 					case " a b c ":
 						if($_SESSION['where_yes_or_not_set']=="Yes")
 						{
-							$_SESSION['queryposts'].= " AND (".$_SESSION['field_value']." LIKE  'a%'OR ".$_SESSION['field_value']. "LIKE  'b%'OR ".$_SESSION['field_value']." LIKE  'c%')"; 
+							$_SESSION['queryposts'].= " AND (".$_SESSION['field_value']." LIKE  'a%'OR ".$_SESSION['field_value']. " LIKE  'b%'OR ".$_SESSION['field_value']." LIKE  'c%')"; 
 						}
 						else
 						{
